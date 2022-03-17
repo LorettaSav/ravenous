@@ -20,12 +20,15 @@ let business = {
 const businesses = [business, business, business, business, business, business];
 
 export default class App extends React.Component {
+  searchYelp(term,location,sortBy) {
+    return console.log(`hi ${term} im at ${location} filtered by ${sortBy}`);
+  }
   render()
     {
       return (
         <div className="App">
           <h1>ravenous</h1>
-          <SearchBar/>
+          <SearchBar searchYelp={this.searchYelp}/>
           <BusinessList businesses={businesses}/> 
         </div>
       )
